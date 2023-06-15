@@ -5,9 +5,9 @@ function solution(n) {
     //어차피 자기자신은 정답이라 초기값 1에서 시작
     let result = 1; 
   
-    for(let a = 1; a <= ban; a++){
+    for(let a = 1; a < ban; a++){
         let number = 0;
-        for(let b = a; b < n; b++){
+        for(let b = a; b < ban +1; b++){
             number+=b;
             if(number == n){result++}
             if(number > n){break;}
