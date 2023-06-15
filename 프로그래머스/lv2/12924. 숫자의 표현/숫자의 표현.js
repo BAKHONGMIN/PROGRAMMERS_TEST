@@ -7,7 +7,7 @@ function solution(n) {
   
     for(let a = 1; a < ban; a++){
         let number = 0;
-        for(let b = a; b < ban +1; b++){
+        for(let b = a; b <=ban; b++){
             number+=b;
             if(number == n){result++}
             if(number > n){break;}
