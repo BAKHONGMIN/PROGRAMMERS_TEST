@@ -1,8 +1,18 @@
 function solution(s){
-    let stackCount = 0;
-    for (let i = 0; i < s.length; i++) {
-        stackCount += s[i] === '(' ? 1 : -1;
-        if (stackCount < 0) return false;
+
+    const string = s; 
+    let num = 0; 
+    
+    for(let i = 0; i < string.length; i++){
+        
+        string[i] === '(' ? num += 1 : num -= 1;
+        
+        if (num < 0) {
+            return false
+        };
+        
     }
-    return stackCount === 0 ? true : false;
+
+    // num이 0이면 true를 반환해준다
+    return num === 0 ? true : false;
 }
