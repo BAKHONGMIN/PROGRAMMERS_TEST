@@ -5,14 +5,14 @@ function solution(s){
        return 0
    }
     
+    // 
     const array = [];
     
-    for(item of s){
-        array.push(item);
-        // console.log(array)
+    for(let i = 0; i < s.length; i++){
+        array.push(s[i]);
         if(array[array.length - 2] === array[array.length - 1]){
-            array.pop()
-            array.pop()
+            array.pop();
+            array.pop();
         }
         
     }
