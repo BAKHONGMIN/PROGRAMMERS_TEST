@@ -1,17 +1,17 @@
 function solution(people, limit) {
-  const arr = people.sort((a, z) => a - z);
-  const { length } = arr;
-  let start = 0;
-  let end = length - 1;
-  let count = 0;
-  while (start <= end) {
-    if (arr[start] + arr[end] > limit || start === end) {
-      end--;
-    } else {
-      start++;
-      end--;
-      count++;
+    const sort = people.slice().sort((a, b) => a - b);
+    let count = 0;
+    let min = 0;
+    let max = sort.length-1;
+    
+    while(min <= max){
+        if(sort[min] + sort[max] > limit || min === max){
+            max--;
+        }else{
+            min++;
+            max--;
+            count++;
+        }
     }
-  }
-  return length - count;
+    return sort.length - count
 }
