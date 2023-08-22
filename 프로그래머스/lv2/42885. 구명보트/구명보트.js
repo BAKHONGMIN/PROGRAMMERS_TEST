@@ -5,12 +5,16 @@ function solution(people, limit) {
     let max = sort.length-1;
     
     while(min <= max){
-        if(sort[min] + sort[max] > limit || min === max){
-            max--;
-        }else{
+        const sum = sort[min] + sort[max];
+        if(max === min){
+            break;
+        }
+        if(sum <= limit){
             min++;
             max--;
             count++;
+        }else{
+            max--;
         }
     }
     return sort.length - count
