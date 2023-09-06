@@ -7,7 +7,7 @@ function solution(n){
             x--
             index++
         }
-        x = x /2;  
+        x/=2
     }
     return index
 }
