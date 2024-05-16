@@ -5,8 +5,8 @@ function solution(citations) {
     
     let hIndex = 0;
     
-    for(let i  = 0; i < sortCitations.length; i++){
-        if(i + 1 <= sortCitations[i]){
+    for(let i=1; i <= sortCitations.length; i++){
+        if(sortCitations[i -1] >= i){
             hIndex++
         }
     }
