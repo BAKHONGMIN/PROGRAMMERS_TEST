@@ -1,13 +1,14 @@
 function solution(cacheSize, cities) {
+    
+    cities = cities.map((item) => item.toLowerCase())
     const cacheArray = [];
-    let num = 0;
+    let num =0;
     
     if(!cacheSize){
         return num = cities.length * 5
     }
     
-    cities.map((items) => {
-        const item = items.toLowerCase();
+    cities.map((item) => {
         if(cacheArray.length >= cacheSize){
             if(cacheArray.includes(item)){
                 const index = cacheArray.indexOf(item);
