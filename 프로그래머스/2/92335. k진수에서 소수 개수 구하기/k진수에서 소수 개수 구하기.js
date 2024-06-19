@@ -1,9 +1,6 @@
 function solution(n, k) {
-    // k 진수로 바꾸기
-    const convert = n.toString(k);
-    
-    // 0으로 되어있는 부분 빼고 숫자 빼내기
-    const string = convert.split(0);
+    // k 진수로 바꾸기, 0으로 되어있는 부분 빼고 숫자 빼내기
+    const string = n.toString(k).split(0);;
     
     // 소수 개수
     let result = 0;
