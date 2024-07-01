@@ -5,23 +5,17 @@ function solution(word) {
     let result = 0;  // 결과를 저장할 변수
     
     // 최대 단어 수 계산
-    for(let i = 1; i <= numLen; i++) {
-        maxNum += order.length ** i;
+    for(let i = 1; i<=numLen; i++){ 
+        maxNum += order.length ** i;  // 각 길이에 대한 단어 수를 누적
     }
     
     // 주어진 단어의 순서를 계산
-    for(let i = 1; i <= numLen; i++) {
+    for(let i = 1; i <= numLen; i++){
         const cases = Math.floor(maxNum / order.length ** i); // 현재 위치에서 가능한 경우의 수
-        const num = order.indexOf(word[i - 1]) + 1; // 현재 문자의 인덱스를 구함
+        const num = order.indexOf(word[i-1]) + 1; // 현재 문자의 인덱스를 구함
         
         // 각 경우의 수를 더함
-        if (num == 0) {
-            result += 0;
-        } else if (num == 1) {
-            result += 1;
-        } else {
-            result += cases * (num - 1) + 1;
-        }
+        num == 0 ? result += 0 : num == 1 ? result += 1 : result += cases * (num - 1) + 1;
     }
     return result; // 결과 반환
 }
